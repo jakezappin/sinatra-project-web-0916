@@ -1,0 +1,5 @@
+<h1> List All Restaurants </h1>
+
+<% @restaurants.each do |restaurant| %>
+  <li> <a href="/restaurants/<%= restaurant.id %>"> <%= restaurant.name %> </a></li>
+<% end %>

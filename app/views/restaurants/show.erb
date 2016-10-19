@@ -1,0 +1,27 @@
+<p> Name <%=@restaurant.name%> </p>
+
+<p> Rating: <%=@restaurant.rating%> </p>
+
+<p> Address: <%=@restaurant.address%> </p>
+
+
+<h3>People who want to try</h3>
+<form>
+<%@users.each do |u|%>
+  <%=u.name%>
+  <%end%>
+
+</form>
+
+
+
+<h3>Add To List Of Restaurants To Try</h3>
+<form action='/restaurants/<%=@restaurant.id%>' method='post'>
+  <input type='hidden' id='hidden' name='_method' value='patch'>
+<select name="customers[id]">
+  <%@customers.each do |c|%>
+  <option value="<%=c.id%>"><%=c.name%></option>
+  <%end%>
+  <input type="submit" value="Submit"/>
+</select>
+</form>
