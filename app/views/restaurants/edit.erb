@@ -1,0 +1,29 @@
+<h1>Update Restaurant</h1>
+
+<form action="/restaurants/<%=@restaurant.id%>" method="post">
+  <label>Name:</label>
+
+  <br></br>
+
+  <input type="text" name="restaurant[name]" id="restaurant_id" value="<%=@restaurant.name%>">
+
+  <br></br>
+
+  <label>Rating:</label>
+
+  <br></br>
+
+  <input type="integer" name="restaurant[rating]" value="<%=@restaurant.rating%>">
+
+  <br></br>
+
+  <label>Address:</label>
+
+  <br></br>
+
+  <input type="text" name="restaurant[address]" value="<%=@restaurant.address%>">
+
+  <br></br>
+
+  <input type="submit" value="Update Restaurant">
+</form>

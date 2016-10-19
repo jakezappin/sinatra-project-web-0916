@@ -21,4 +21,21 @@ class CustomerController < ApplicationController
     redirect to "/customers/#{@customer.id}"
   end
 
+  post '/customers/:id' do
+    @customer = Customer.find(params[:id])
+    @customer.update(params["customer"])
+    redirect to "/customers/#{@customer.id}"
+  end
+
+  get '/customers/:id/edit' do
+    @customer = Customer.find(params[:id])
+    erb :'/customers/edit'
+  end
+
+  delete '/customers/:id/delete' do
+    @customer = Customer.find(params[:id])
+    @customer.delete
+    redirect to '/customers'
+  end
+
 end

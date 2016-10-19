@@ -5,3 +5,8 @@
     <li> <a href="/restaurants/restaurant.id %>"> <%=restaurant.name%> </a></li>
   </ul>
 <% end %>
+
+<form method="post" action="/customers/<%= @customer.id %>/delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+
+  <input type="submit" value="delete">

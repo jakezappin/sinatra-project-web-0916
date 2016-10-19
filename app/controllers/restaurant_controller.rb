@@ -19,13 +19,30 @@ class RestaurantController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
     @customers = Customer.all
     @users = @restaurant.customers
-    binding.pry
     erb :'/restaurants/show'
   end
 
   patch '/restaurants/:id' do
     @add = RestaurantCustomer.create(restaurant_id: params[:id], customer_id: params[:customers][:id])
     redirect to "/restaurants/#{params[:id]}"
+  end
+
+  post '/restaurants/:id' do
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.update(params["restaurant"])
+    redirect to "/restaurants/#{@restaurant.id}"
+  end
+
+
+  get '/restaurants/:id/edit' do
+    @restaurant = Restaurant.find(params[:id])
+    erb :'/restaurants/edit'
+  end
+
+  delete '/restaurants/:id/delete' do
+    @restaurant = Restaurant.find(params[:id])
+    @restaurant.delete
+    redirect to '/restaurants'
   end
 
 end
