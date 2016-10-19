@@ -1,0 +1,9 @@
+<h1>Found Businesses</h1>
+
+<% @businesses.each do |business| %>
+  Name: <%= business.name %><br>
+   Location: <%= business.address %><br>
+    Rating: <%= business.rating %><br>
+     Url: <%= business.url %><br><br>
+
+  <% end %>

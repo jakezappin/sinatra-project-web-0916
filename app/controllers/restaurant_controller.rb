@@ -45,4 +45,8 @@ class RestaurantController < ApplicationController
     redirect to '/restaurants'
   end
 
+# YelpApi.search('nyc', {cusine:'tacos'})
+# -> businesses -> [<@sallys, italian, $$$>]
+
+
 end

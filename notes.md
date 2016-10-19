@@ -39,3 +39,20 @@ When you've successfully built out an app that allows you to add a restaurant ma
 <img src="/gifs/BasicSinatraAppwithAdapterPattern.gif">
 
 Using the adapter pattern, allow your users to hit the API and get restaurant objects returned. Once your adapter pattern is working effectively, feel free to tool around with the API.
+
+
+class YelpApi
+
+@client ||= Yelp::Client.new({config.consumer_key = 'Q-DvJBRO0nb68ZXIOrd-dw'
+  config.consumer_secret = 'eaXFvYl5MdKvqYlfU3R2V8rIiQM'
+  config.token = '8aVxGbd5bAoYmlWXulMSooWrk1zpoad7'
+  config.token_secret = 'qj3Y4Os6nFXwtVjrxAaRjSuxoEA'})
+
+def self.search(location)
+  client.earch(location, {term: 'food'})
+end
+
+end
+
+
+bundle exec rake config.ru ---> to test what you can get with ---> YelpApi.client.search(tacos)

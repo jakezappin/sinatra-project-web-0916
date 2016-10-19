@@ -11,7 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161018200304) do
+ActiveRecord::Schema.define(version: 20161019155044) do
+
+  create_table "businesses", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.float  "rating"
+    t.string "url"
+  end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
